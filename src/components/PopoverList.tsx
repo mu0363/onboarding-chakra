@@ -1,4 +1,5 @@
 import { Button } from "@chakra-ui/button";
+import { Box, Text } from "@chakra-ui/layout";
 import { VFC, useState } from "react";
 import { PopoverItem } from "src/components/PopoverItem";
 import { contents } from "src/lib/data";
@@ -8,8 +9,7 @@ export const PopoverList: VFC = () => {
   const stepForward = () => setCurrentStep(currentStep + 1);
 
   return (
-    <div>
-      <p>リロードするともう一度出ます。</p>
+    <Box mt="10">
       {contents.map((content, index) => (
         <PopoverItem
           key={index}
@@ -24,6 +24,7 @@ export const PopoverList: VFC = () => {
           </Button>
         </PopoverItem>
       ))}
-    </div>
+      <Text mt="10">リロードするともう一度出ます。</Text>
+    </Box>
   );
 };
