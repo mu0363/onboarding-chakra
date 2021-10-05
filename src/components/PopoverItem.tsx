@@ -1,4 +1,5 @@
 import { VFC, ReactNode, useState } from "react";
+import { Img } from "@chakra-ui/react";
 import {
   Box,
   ButtonGroup,
@@ -34,22 +35,25 @@ export const PopoverItem: VFC<Props> = (props) => {
 
   return (
     <div>
-      <Box mt="10">
+      <Box mt="5">
         <Popover
           id={step.toString()}
           placement="right"
           closeOnBlur={false}
           isOpen={currentStep === step && isOpen ? true : false}
+          openDelay={100}
         >
           <>
             <PopoverTrigger>{children}</PopoverTrigger>
-
             <PopoverContent color="white" bg="blue.800" borderColor="blue.800">
               <PopoverHeader pt={4} fontWeight="bold" border="0">
                 {content.title}
               </PopoverHeader>
               <PopoverArrow bg="blue.800" />
               <PopoverBody>{content.description}</PopoverBody>
+              {length === currentStep ? (
+                <Img src="/images/cat.gif" alt="he is a farmer" p={5} />
+              ) : null}
               <PopoverFooter
                 border="0"
                 d="flex"
