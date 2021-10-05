@@ -26,5 +26,6 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     "require-jsdoc": "off",
     "@next/next/no-img-element": "off",
+    "spaced-comment": "off",
   },
 };
